@@ -1,11 +1,18 @@
-const express = require("express");
+const express = require('express');
+const { engine } = require ('express-handlebars');
 
 const app = express();
-const config = require('./config/config.js'); 
 
-console.log(process.env.NODE_ENV) ; 
+app.engine('hbs', engine());
+app.set('view engine', 'hbs');
+app.set("hbs", "./views");
+app.use( express.static('public')); 
+ 
+app.get ('/',  (req , res) => {
+    res.render('home', {layout: false});
 
-app.listen(5005, () => console.log(`Server is runnind on port ${config.PORT}`  )) ; 
+} );
 
 
 
+app.listen(5005, () => console.log(`Server is runnind on port 5005`  )) ; 
