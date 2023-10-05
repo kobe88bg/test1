@@ -1,12 +1,16 @@
-const {Router}  = require ('express');
-const productControler = require ('./Controlers/productControler');
+const { Router } = require('express');
+const productControler = require('./Controlers/productControler');
+const aboutControler = require('./Controlers/aboutController');
 
+const router = Router();
 
-const router = Router(); 
- 
-router.use('/products', productControler) ;
+router.use('/', productControler);
 
+router.use('/about', aboutControler);
+router.get('*', (req, res) => {
+    res.render('404')
+}
+);
 
-module.exports = router ; 
+module.exports = router;
 
- 

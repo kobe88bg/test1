@@ -3,15 +3,15 @@ const { Router } =  require('express');
 const router = Router(); 
 
 router.get('/', (req, res) => {
-    res.render('home', {layout: false})
+    res.render('home')
 }); 
 router.get('/create', (req, res) => {
-    res.render('create', {layout: false})
+    res.render('create')
 
 }); 
 
 router.get('/test', (req, res)=> {
-    res.render('test' , {layout:false}); 
+    res.render('test' , {layout:true}); 
 
 }); 
 module.exports = router; 
