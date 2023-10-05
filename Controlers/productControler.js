@@ -11,7 +11,7 @@ router.get('/create', (req, res) => {
 }); 
 
 router.get('/test', (req, res)=> {
-    res.render('test' , {layout:true}); 
+    res.render('test'); 
 
 }); 
 module.exports = router; 

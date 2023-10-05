@@ -4,9 +4,11 @@ const aboutControler = require('./Controlers/aboutController');
 
 const router = Router();
 
-router.use('/', productControler);
 
-router.use('/about', aboutControler);
+router.use('/', aboutControler);
+router.use('/products', productControler);
+
+
 router.get('*', (req, res) => {
     res.render('404')
 }
