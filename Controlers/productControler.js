@@ -4,7 +4,8 @@ const productService = require('../Services/ProductService');
 const router = Router(); 
 
 router.get('/', (req, res) => {
-    res.render('home')
+    let products = productService.getAll() ; 
+    res.render('home', {title: "Browse" , products : products })
 }); 
 router.get('/create', (req, res) => {
     res.render('create')
