@@ -12,6 +12,10 @@ function setupExpress (app) {
     app.set('view engine', 'hbs');
     app.set("hbs", "./views");
     app.use( express.static('public')); 
+    app.use(express.urlencoded({
+        extended: true 
+    })); 
+
 }
 
 
