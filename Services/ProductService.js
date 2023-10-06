@@ -7,6 +7,9 @@ let productsData = require('../config/products.json');
 function getAll () {
     return productsData; 
 }
+function getOne (id){
+    return productsData.find(x => x.id == id); 
+}
 
 function create (data) {
     let cube = new Cube(
@@ -30,5 +33,6 @@ function create (data) {
 
 module.exports = {
     create ,
-    getAll
+    getAll ,
+    getOne ,
 }

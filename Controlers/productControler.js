@@ -18,7 +18,8 @@ router.get('/test', (req, res)=> {
 }); 
 
 router.get('/details/:productId', (req, res)=> {
-    res.render('details', {title: "details "}); 
+    let product = productService.getOne(req.params.productId); 
+    res.render('details', {title: "details ",  product}); 
 
 }); 
 
